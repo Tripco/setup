@@ -76,12 +76,11 @@ install_applications() {
 
     CASKS=("google-chrome" "1password" "visual-studio-code" "slack" "linear-linear" "github")
 
-    if brew install --cask "${CASKS[@]}"; then
-        log_success "Applications installed successfully"
-    else
-        log_error "Failed to install applications"
-        exit 1
-    fi
+    for cask in "${CASKS[@]}"; do
+        brew install --cask "$cask" || true
+    done
+
+    log_success "Applications installation completed"
 }
 
 setup_shell_profile() {
