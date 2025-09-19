@@ -74,14 +74,14 @@ install_homebrew() {
 install_applications() {
     log_info "Installing Applications..."
 
-    CASKS=("google-chrome" "1password" "visual-studio-code" "slack" "linear-linear" "github")
+    brew install --cask google-chrome || true
+    brew install --cask 1password || true
+    brew install --cask visual-studio-code || true
+    brew install --cask slack || true
+    brew install --cask linear-linear || true
+    brew install --cask github || true
 
-    if brew install --cask "${CASKS[@]}"; then
-        log_success "Applications installed successfully"
-    else
-        log_error "Failed to install applications"
-        exit 1
-    fi
+    log_success "Applications installation completed"
 }
 
 setup_shell_profile() {
