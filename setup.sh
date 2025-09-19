@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # macOS Setup Script
-# Installs Homebrew, Rosetta (for Apple Silicon), and Google Chrome
-# Usage: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Tripco/setup/HEAD/setup.sh)"
 
 set -e  # Exit on any error
 
